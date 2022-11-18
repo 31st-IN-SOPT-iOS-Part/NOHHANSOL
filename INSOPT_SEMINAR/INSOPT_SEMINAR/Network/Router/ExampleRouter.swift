@@ -78,17 +78,33 @@ extension ExampleRouter: TargetType {
             
         case .addSong(param: let param):
             var multipartFormData: [MultipartFormData] = []
-            let imageData = MultipartFormData(provider: .data(param.image), name: "image", fileName: "image.jpeg", mimeType: "image/jpeg")
+
+            /// image Data to MultipartFormData
+            let imageData = MultipartFormData(provider: .data(param.image),
+                                              name: "image",
+                                              fileName: "image.jpeg",
+                                              mimeType: "image/jpeg")
             multipartFormData.append(imageData)
-             
-            let jsonParam = ["singer": param.singer, "title": param.title] as [String: Any]
-            let data = try! JSONSerialization.data(withJSONObject: jsonParam, options: .prettyPrinted)
+
+            let jsonParam = ["singer": param.singer, "title": param.title]
+
+            /// Dictionary to JSON
+            let data = try! JSONSerialization.data(withJSONObject: jsonParam.asParameter(),
+                                                   options: .prettyPrinted)
+
+
+            /// JSON Object to JSON String
             let jsonString = String(data: data, encoding: .utf8)!
-            let stringData = MultipartFormData(provider: .data(jsonString.data(using: String.Encoding.utf8)!), name: "request", mimeType: "application/json")
+
+            /// JSON String to MultipartFormData
+            let stringData = MultipartFormData(provider: .data(jsonString.data(using: String.Encoding.utf8)!),
+                                               name: "request",
+                                               mimeType: "application/json"
+            )
             multipartFormData.append(stringData)
-        
+
             return .uploadMultipart(multipartFormData)
-            
+
         case .fetchSongs:
             return .requestPlain
         }

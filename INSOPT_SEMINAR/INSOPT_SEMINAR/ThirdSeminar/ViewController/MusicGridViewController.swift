@@ -34,7 +34,7 @@ final class MusicGridViewController: UIViewController {
     
     // MARK: - Variables
     
-    let userProvider = MoyaProvider<ExampleRouter>(
+    let exampleProvider = MoyaProvider<ExampleRouter>(
         plugins: [NetworkLoggerPlugin(verbose: true)]
     )
 
@@ -95,7 +95,7 @@ extension MusicGridViewController {
     // MARK: - Server Helpers
     
     private func fetchMusicList() {
-        userProvider.request(.fetchSongs) { response in
+        exampleProvider.request(.fetchSongs) { response in
             switch response {
             case .success(let result):
                 let status = result.statusCode

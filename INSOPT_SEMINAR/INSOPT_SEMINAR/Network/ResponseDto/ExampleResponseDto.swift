@@ -37,17 +37,8 @@ struct AddSongResponseDto: Codable {
     let statusCode: Int
     let success: Bool
     let message: String
-    let data: SongDto
+    let data: MusicDto
 }
-
-// MARK: - DataClass
-
-struct SongDto: Codable {
-    let id: Int
-    let image: String
-    let title, singer: String
-}
-
 
 // MARK: - MusicResponseDto
 

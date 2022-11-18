@@ -45,7 +45,7 @@ final class AddSongViewController: UIViewController {
     
     // MARK: - Variables
     
-    let userProvider = MoyaProvider<ExampleRouter>(
+    let exampleRouter = MoyaProvider<ExampleRouter>(
         plugins: [NetworkLoggerPlugin(verbose: true)]
     )
     
@@ -110,7 +110,7 @@ extension AddSongViewController {
     // MARK: - Server Helpers
     
     private func addSong(param: AddSongRequestDto) {
-        userProvider.request(.addSong(param: param)) { response in
+        exampleRouter.request(.addSong(param: param)) { response in
             switch response {
             case .success(let result):
                 let status = result.statusCode
