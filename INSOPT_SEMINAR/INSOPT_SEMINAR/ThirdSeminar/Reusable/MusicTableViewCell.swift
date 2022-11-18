@@ -35,7 +35,8 @@ final class MusicTableViewCell: UITableViewCell {
     
     private lazy var clickableButton: UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIImage(named: "iconClickable"), for: .normal)
+        button.setBackgroundImage(UIImage(named: "iconCheck"), for: .normal)
+        button.isHidden = true
         return button
     }()
 
@@ -96,9 +97,14 @@ extension MusicTableViewCell {
     
     // MARK: - General Helpers
     
-    func dataBind(model: MusicModel) {
+    func dataBind(model: MusicModel, isSelected: Bool) {
         titleLabel.text = model.title
         singerLabel.text = model.singer
         albumImageView.image = UIImage(named: model.albumImage)
+        if isSelected {
+            clickableButton.isHidden = false
+        } else {
+            clickableButton.isHidden = true
+        }
     }
 }

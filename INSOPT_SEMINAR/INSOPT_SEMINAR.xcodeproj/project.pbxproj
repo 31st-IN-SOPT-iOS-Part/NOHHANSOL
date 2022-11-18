@@ -7,9 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC1AFDD02904210200272F92 /* PhotoGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDCF2904210200272F92 /* PhotoGridViewController.swift */; };
+		CC1AFDD22904215100272F92 /* KakaoTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDD12904215100272F92 /* KakaoTabbarController.swift */; };
+		CC1AFDD42904216D00272F92 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDD32904216D00272F92 /* FriendListViewController.swift */; };
+		CC1AFDD62904217300272F92 /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDD52904217300272F92 /* ChatListViewController.swift */; };
+		CC1AFDD82904217800272F92 /* SharpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDD72904217800272F92 /* SharpViewController.swift */; };
+		CC1AFDDA2904218000272F92 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDD92904218000272F92 /* ShopViewController.swift */; };
+		CC1AFDDC2904218400272F92 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDDB2904218400272F92 /* MoreViewController.swift */; };
+		CC1AFDE12904224C00272F92 /* Int+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDE02904224C00272F92 /* Int+.swift */; };
+		CC1AFDE32904225200272F92 /* Double+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDE22904225200272F92 /* Double+.swift */; };
+		CC1AFDE52904225E00272F92 /* CGFloat+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDE42904225D00272F92 /* CGFloat+.swift */; };
+		CC1AFDE92904298B00272F92 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDE82904298B00272F92 /* PhotoCollectionViewCell.swift */; };
+		CC1AFDEB2904367900272F92 /* KakaoFriendModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDEA2904367900272F92 /* KakaoFriendModel.swift */; };
+		CC1AFDED2904382D00272F92 /* FriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1AFDEC2904382D00272F92 /* FriendTableViewCell.swift */; };
+		CC5368872915BEE70010BD2A /* NetworkLoggerPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5368862915BEE70010BD2A /* NetworkLoggerPlugin.swift */; };
+		CC53688A2915BF600010BD2A /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5368892915BF600010BD2A /* Encodable+.swift */; };
+		CC53688C2915BF720010BD2A /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC53688B2915BF720010BD2A /* UserRouter.swift */; };
+		CC53688E2915BFB60010BD2A /* UserRequestDtos.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC53688D2915BFB60010BD2A /* UserRequestDtos.swift */; };
+		CC5368912915C1950010BD2A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5368902915C1950010BD2A /* Environment.swift */; };
+		CC5368942915C5F80010BD2A /* ExampleResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5368932915C5F80010BD2A /* ExampleResponseDto.swift */; };
+		CC5368982915C60E0010BD2A /* ExampleRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5368972915C60E0010BD2A /* ExampleRequestDto.swift */; };
+		CC53689A2915C6150010BD2A /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5368992915C6150010BD2A /* ExampleRouter.swift */; };
+		CC53689C2915DF200010BD2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC53689B2915DF200010BD2A /* LoginViewController.swift */; };
+		CC5368A02915FC240010BD2A /* UserResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC53689F2915FC240010BD2A /* UserResponseDto.swift */; };
+		CCB3D2252915B8160041E7A1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3D2242915B8160041E7A1 /* SignupViewController.swift */; };
+		CCB3D2282915B8660041E7A1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CCB3D2272915B8660041E7A1 /* Moya */; };
+		CCB3D22A2915B8A10041E7A1 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3D2292915B8A10041E7A1 /* InputView.swift */; };
 		CCDF93D728F9B126004F960F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCDF93D528F9B126004F960F /* Main.storyboard */; };
 		CCDF93D928F9B128004F960F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCDF93D828F9B128004F960F /* Assets.xcassets */; };
 		CCDF93DC28F9B128004F960F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCDF93DA28F9B128004F960F /* LaunchScreen.storyboard */; };
+		CCE350942926B91A0034E443 /* SortedMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE350932926B91A0034E443 /* SortedMusicViewController.swift */; };
+		CCE350962926B9310034E443 /* SingerCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE350952926B9310034E443 /* SingerCategoryCollectionViewCell.swift */; };
+		CCE350982926B9430034E443 /* MusicContainerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE350972926B9430034E443 /* MusicContainerCollectionViewCell.swift */; };
+		CCE3509A2926B9520034E443 /* SortedMusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE350992926B9520034E443 /* SortedMusicModel.swift */; };
+		CCE3509F2926B9790034E443 /* AddSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE3509E2926B9790034E443 /* AddSongViewController.swift */; };
 		CCF5D17C28F9B49A002D89B6 /* FirstDelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5D17228F9B49A002D89B6 /* FirstDelegateViewController.swift */; };
 		CCF5D17D28F9B49A002D89B6 /* FirstClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5D17328F9B49A002D89B6 /* FirstClosureViewController.swift */; };
 		CCF5D17E28F9B49A002D89B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF5D17428F9B49A002D89B6 /* ViewController.swift */; };
@@ -36,11 +67,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC1AFDCF2904210200272F92 /* PhotoGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridViewController.swift; sourceTree = "<group>"; };
+		CC1AFDD12904215100272F92 /* KakaoTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoTabbarController.swift; sourceTree = "<group>"; };
+		CC1AFDD32904216D00272F92 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
+		CC1AFDD52904217300272F92 /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		CC1AFDD72904217800272F92 /* SharpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharpViewController.swift; sourceTree = "<group>"; };
+		CC1AFDD92904218000272F92 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		CC1AFDDB2904218400272F92 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
+		CC1AFDE02904224C00272F92 /* Int+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+.swift"; sourceTree = "<group>"; };
+		CC1AFDE22904225200272F92 /* Double+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+.swift"; sourceTree = "<group>"; };
+		CC1AFDE42904225D00272F92 /* CGFloat+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+.swift"; sourceTree = "<group>"; };
+		CC1AFDE82904298B00272F92 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC1AFDEA2904367900272F92 /* KakaoFriendModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoFriendModel.swift; sourceTree = "<group>"; };
+		CC1AFDEC2904382D00272F92 /* FriendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendTableViewCell.swift; sourceTree = "<group>"; };
+		CC5368862915BEE70010BD2A /* NetworkLoggerPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoggerPlugin.swift; sourceTree = "<group>"; };
+		CC5368892915BF600010BD2A /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		CC53688B2915BF720010BD2A /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		CC53688D2915BFB60010BD2A /* UserRequestDtos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRequestDtos.swift; sourceTree = "<group>"; };
+		CC5368902915C1950010BD2A /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		CC5368932915C5F80010BD2A /* ExampleResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleResponseDto.swift; sourceTree = "<group>"; };
+		CC5368972915C60E0010BD2A /* ExampleRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRequestDto.swift; sourceTree = "<group>"; };
+		CC5368992915C6150010BD2A /* ExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouter.swift; sourceTree = "<group>"; };
+		CC53689B2915DF200010BD2A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CC53689F2915FC240010BD2A /* UserResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDto.swift; sourceTree = "<group>"; };
+		CCB3D2242915B8160041E7A1 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		CCB3D2292915B8A10041E7A1 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		CCDF93CC28F9B126004F960F /* INSOPT_SEMINAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INSOPT_SEMINAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDF93D628F9B126004F960F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCDF93D828F9B128004F960F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCDF93DB28F9B128004F960F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CCDF93DD28F9B128004F960F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCE350932926B91A0034E443 /* SortedMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedMusicViewController.swift; sourceTree = "<group>"; };
+		CCE350952926B9310034E443 /* SingerCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingerCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCE350972926B9430034E443 /* MusicContainerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicContainerCollectionViewCell.swift; sourceTree = "<group>"; };
+		CCE350992926B9520034E443 /* SortedMusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedMusicModel.swift; sourceTree = "<group>"; };
+		CCE3509E2926B9790034E443 /* AddSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSongViewController.swift; sourceTree = "<group>"; };
 		CCF5D17228F9B49A002D89B6 /* FirstDelegateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstDelegateViewController.swift; sourceTree = "<group>"; };
 		CCF5D17328F9B49A002D89B6 /* FirstClosureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstClosureViewController.swift; sourceTree = "<group>"; };
 		CCF5D17428F9B49A002D89B6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +131,7 @@
 			files = (
 				CCF5D1A128F9B556002D89B6 /* SnapKit in Frameworks */,
 				CCF5D19628F9B508002D89B6 /* SwiftyColor in Frameworks */,
+				CCB3D2282915B8660041E7A1 /* Moya in Frameworks */,
 				CCF5D19928F9B517002D89B6 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,6 +139,170 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC1AFDCB290420DC00272F92 /* ThirdAssignment */ = {
+			isa = PBXGroup;
+			children = (
+				CC1AFDCE290420F300272F92 /* Model */,
+				CC1AFDCD290420ED00272F92 /* View */,
+				CC1AFDCC290420E600272F92 /* ViewController */,
+				CC1AFDD12904215100272F92 /* KakaoTabbarController.swift */,
+			);
+			path = ThirdAssignment;
+			sourceTree = "<group>";
+		};
+		CC1AFDCC290420E600272F92 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC1AFDCF2904210200272F92 /* PhotoGridViewController.swift */,
+				CC1AFDD32904216D00272F92 /* FriendListViewController.swift */,
+				CC1AFDD52904217300272F92 /* ChatListViewController.swift */,
+				CC1AFDD72904217800272F92 /* SharpViewController.swift */,
+				CC1AFDD92904218000272F92 /* ShopViewController.swift */,
+				CC1AFDDB2904218400272F92 /* MoreViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CC1AFDCD290420ED00272F92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC1AFDE72904258100272F92 /* Custom */,
+				CC1AFDE62904257D00272F92 /* Reusable */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CC1AFDCE290420F300272F92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC1AFDEA2904367900272F92 /* KakaoFriendModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CC1AFDDE2904223900272F92 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				CC5368882915BF510010BD2A /* Extensions */,
+				CC1AFDDF2904223E00272F92 /* UIExtensions */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		CC1AFDDF2904223E00272F92 /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC1AFDE02904224C00272F92 /* Int+.swift */,
+				CC1AFDE22904225200272F92 /* Double+.swift */,
+				CC1AFDE42904225D00272F92 /* CGFloat+.swift */,
+			);
+			path = UIExtensions;
+			sourceTree = "<group>";
+		};
+		CC1AFDE62904257D00272F92 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				CC1AFDE82904298B00272F92 /* PhotoCollectionViewCell.swift */,
+				CC1AFDEC2904382D00272F92 /* FriendTableViewCell.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		CC1AFDE72904258100272F92 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		CC5368832915BE540010BD2A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CC5368922915C5EB0010BD2A /* ResponseDto */,
+				CC5368852915BEA00010BD2A /* RequestDto */,
+				CC5368842915BE600010BD2A /* Router */,
+				CC5368862915BEE70010BD2A /* NetworkLoggerPlugin.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CC5368842915BE600010BD2A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CC53688B2915BF720010BD2A /* UserRouter.swift */,
+				CC5368992915C6150010BD2A /* ExampleRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CC5368852915BEA00010BD2A /* RequestDto */ = {
+			isa = PBXGroup;
+			children = (
+				CC53688D2915BFB60010BD2A /* UserRequestDtos.swift */,
+				CC5368972915C60E0010BD2A /* ExampleRequestDto.swift */,
+			);
+			path = RequestDto;
+			sourceTree = "<group>";
+		};
+		CC5368882915BF510010BD2A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC5368892915BF600010BD2A /* Encodable+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CC53688F2915C18C0010BD2A /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				CC5368902915C1950010BD2A /* Environment.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		CC5368922915C5EB0010BD2A /* ResponseDto */ = {
+			isa = PBXGroup;
+			children = (
+				CC5368932915C5F80010BD2A /* ExampleResponseDto.swift */,
+				CC53689F2915FC240010BD2A /* UserResponseDto.swift */,
+			);
+			path = ResponseDto;
+			sourceTree = "<group>";
+		};
+		CCB3D2202915B7B90041E7A1 /* FourthSeminar */ = {
+			isa = PBXGroup;
+			children = (
+				CCB3D2232915B7FE0041E7A1 /* Model */,
+				CCB3D2222915B7FB0041E7A1 /* ViewController */,
+				CCB3D2212915B7F40041E7A1 /* View */,
+			);
+			path = FourthSeminar;
+			sourceTree = "<group>";
+		};
+		CCB3D2212915B7F40041E7A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCB3D2292915B8A10041E7A1 /* InputView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CCB3D2222915B7FB0041E7A1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCB3D2242915B8160041E7A1 /* SignupViewController.swift */,
+				CC53689B2915DF200010BD2A /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CCB3D2232915B7FE0041E7A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CCDF93C328F9B126004F960F = {
 			isa = PBXGroup;
 			children = (
@@ -97,15 +323,44 @@
 			isa = PBXGroup;
 			children = (
 				CCF5D18628F9B4B0002D89B6 /* Global */,
+				CC5368832915BE540010BD2A /* Network */,
+				CC1AFDDE2904223900272F92 /* Support */,
+				CC1AFDCB290420DC00272F92 /* ThirdAssignment */,
 				CCF5D17028F9B49A002D89B6 /* FirstSeminar */,
 				CCF5D18D28F9B4BF002D89B6 /* SecondSeminar */,
 				CCF5D18C28F9B4BF002D89B6 /* ThirdSeminar */,
-				CCDF93D528F9B126004F960F /* Main.storyboard */,
+				CCB3D2202915B7B90041E7A1 /* FourthSeminar */,
+				CCE3509B2926B95B0034E443 /* SixthSeminar */,
 				CCDF93D828F9B128004F960F /* Assets.xcassets */,
 				CCDF93DA28F9B128004F960F /* LaunchScreen.storyboard */,
 				CCDF93DD28F9B128004F960F /* Info.plist */,
 			);
 			path = INSOPT_SEMINAR;
+			sourceTree = "<group>";
+		};
+		CCE3509B2926B95B0034E443 /* SixthSeminar */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3509D2926B96A0034E443 /* Reusable */,
+				CCE3509C2926B9670034E443 /* ViewController */,
+				CCDF93D528F9B126004F960F /* Main.storyboard */,
+			);
+			path = SixthSeminar;
+			sourceTree = "<group>";
+		};
+		CCE3509C2926B9670034E443 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3509E2926B9790034E443 /* AddSongViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CCE3509D2926B96A0034E443 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reusable;
 			sourceTree = "<group>";
 		};
 		CCF5D17028F9B49A002D89B6 /* FirstSeminar */ = {
@@ -136,6 +391,7 @@
 		CCF5D18628F9B4B0002D89B6 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				CC53688F2915C18C0010BD2A /* Configuration */,
 				CCF5D18728F9B4B0002D89B6 /* AppLifeCycle */,
 			);
 			path = Global;
@@ -175,6 +431,8 @@
 			children = (
 				CCF5D1A928F9CE03002D89B6 /* MusicTableViewCell.swift */,
 				CCF5D1AD28F9F217002D89B6 /* MusicCollectionViewCell.swift */,
+				CCE350952926B9310034E443 /* SingerCategoryCollectionViewCell.swift */,
+				CCE350972926B9430034E443 /* MusicContainerCollectionViewCell.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -184,6 +442,7 @@
 			children = (
 				CCF5D1A428F9CB4B002D89B6 /* MusicListViewController.swift */,
 				CCF5D1AB28F9EF1B002D89B6 /* MusicGridViewController.swift */,
+				CCE350932926B91A0034E443 /* SortedMusicViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -192,6 +451,7 @@
 			isa = PBXGroup;
 			children = (
 				CCF5D1A728F9CBCB002D89B6 /* MusicModel.swift */,
+				CCE350992926B9520034E443 /* SortedMusicModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,6 +476,7 @@
 				CCF5D19528F9B508002D89B6 /* SwiftyColor */,
 				CCF5D19828F9B517002D89B6 /* Then */,
 				CCF5D1A028F9B556002D89B6 /* SnapKit */,
+				CCB3D2272915B8660041E7A1 /* Moya */,
 			);
 			productName = INSOPT_SEMINAR;
 			productReference = CCDF93CC28F9B126004F960F /* INSOPT_SEMINAR.app */;
@@ -249,6 +510,7 @@
 				CCF5D19428F9B508002D89B6 /* XCRemoteSwiftPackageReference "SwiftyColor" */,
 				CCF5D19728F9B517002D89B6 /* XCRemoteSwiftPackageReference "Then" */,
 				CCF5D19F28F9B556002D89B6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CCB3D2262915B8660041E7A1 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = CCDF93CD28F9B126004F960F /* Products */;
 			projectDirPath = "";
@@ -277,24 +539,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5368A02915FC240010BD2A /* UserResponseDto.swift in Sources */,
 				CCF5D18428F9B49A002D89B6 /* SecondViewController.swift in Sources */,
+				CCE350962926B9310034E443 /* SingerCategoryCollectionViewCell.swift in Sources */,
+				CC5368872915BEE70010BD2A /* NetworkLoggerPlugin.swift in Sources */,
+				CC1AFDEB2904367900272F92 /* KakaoFriendModel.swift in Sources */,
+				CC1AFDD22904215100272F92 /* KakaoTabbarController.swift in Sources */,
 				CCF5D19328F9B4C0002D89B6 /* FirstLayoutViewController.swift in Sources */,
 				CCF5D18328F9B49A002D89B6 /* TextViewController.swift in Sources */,
+				CC1AFDE52904225E00272F92 /* CGFloat+.swift in Sources */,
+				CC1AFDDA2904218000272F92 /* ShopViewController.swift in Sources */,
 				CCF5D1AC28F9EF1B002D89B6 /* MusicGridViewController.swift in Sources */,
+				CC5368912915C1950010BD2A /* Environment.swift in Sources */,
 				CCF5D19228F9B4C0002D89B6 /* MelonViewController.swift in Sources */,
+				CC1AFDD02904210200272F92 /* PhotoGridViewController.swift in Sources */,
 				CCF5D1A528F9CB4B002D89B6 /* MusicListViewController.swift in Sources */,
 				CCF5D17E28F9B49A002D89B6 /* ViewController.swift in Sources */,
 				CCF5D17D28F9B49A002D89B6 /* FirstClosureViewController.swift in Sources */,
+				CC53688C2915BF720010BD2A /* UserRouter.swift in Sources */,
 				CCF5D18A28F9B4B0002D89B6 /* AppDelegate.swift in Sources */,
+				CC1AFDE32904225200272F92 /* Double+.swift in Sources */,
+				CC1AFDED2904382D00272F92 /* FriendTableViewCell.swift in Sources */,
 				CCF5D18B28F9B4B0002D89B6 /* SceneDelegate.swift in Sources */,
+				CC1AFDD42904216D00272F92 /* FriendListViewController.swift in Sources */,
+				CCE3509F2926B9790034E443 /* AddSongViewController.swift in Sources */,
+				CC53688E2915BFB60010BD2A /* UserRequestDtos.swift in Sources */,
+				CC5368982915C60E0010BD2A /* ExampleRequestDto.swift in Sources */,
 				CCF5D18028F9B49A002D89B6 /* FirstViewController.swift in Sources */,
 				CCF5D1A828F9CBCB002D89B6 /* MusicModel.swift in Sources */,
 				CCF5D17F28F9B49A002D89B6 /* ThirdViewController.swift in Sources */,
+				CCE350982926B9430034E443 /* MusicContainerCollectionViewCell.swift in Sources */,
+				CC1AFDD82904217800272F92 /* SharpViewController.swift in Sources */,
+				CCB3D22A2915B8A10041E7A1 /* InputView.swift in Sources */,
+				CC5368942915C5F80010BD2A /* ExampleResponseDto.swift in Sources */,
+				CC53689A2915C6150010BD2A /* ExampleRouter.swift in Sources */,
+				CC1AFDDC2904218400272F92 /* MoreViewController.swift in Sources */,
+				CCE3509A2926B9520034E443 /* SortedMusicModel.swift in Sources */,
+				CC1AFDE12904224C00272F92 /* Int+.swift in Sources */,
+				CC53689C2915DF200010BD2A /* LoginViewController.swift in Sources */,
+				CC1AFDE92904298B00272F92 /* PhotoCollectionViewCell.swift in Sources */,
 				CCF5D17C28F9B49A002D89B6 /* FirstDelegateViewController.swift in Sources */,
+				CC53688A2915BF600010BD2A /* Encodable+.swift in Sources */,
 				CCF5D18128F9B49A002D89B6 /* TestViewController.swift in Sources */,
+				CC1AFDD62904217300272F92 /* ChatListViewController.swift in Sources */,
+				CCB3D2252915B8160041E7A1 /* SignupViewController.swift in Sources */,
 				CCF5D18228F9B49A002D89B6 /* SecondClosureViewController.swift in Sources */,
 				CCF5D1AE28F9F217002D89B6 /* MusicCollectionViewCell.swift in Sources */,
 				CCF5D19128F9B4C0002D89B6 /* ScrollLayoutViewController.swift in Sources */,
+				CCE350942926B91A0034E443 /* SortedMusicViewController.swift in Sources */,
 				CCF5D18528F9B49A002D89B6 /* SecondDelegateViewController.swift in Sources */,
 				CCF5D1AA28F9CE03002D89B6 /* MusicTableViewCell.swift in Sources */,
 			);
@@ -441,6 +733,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://3.38.101.227:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QS42RPKQCD;
@@ -469,6 +762,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "http://3.38.101.227:8080";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QS42RPKQCD;
@@ -516,6 +810,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		CCB3D2262915B8660041E7A1 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.0;
+			};
+		};
 		CCF5D19428F9B508002D89B6 /* XCRemoteSwiftPackageReference "SwiftyColor" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/SwiftyColor";
@@ -543,6 +845,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		CCB3D2272915B8660041E7A1 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCB3D2262915B8660041E7A1 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
 		CCF5D19528F9B508002D89B6 /* SwiftyColor */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = CCF5D19428F9B508002D89B6 /* XCRemoteSwiftPackageReference "SwiftyColor" */;

@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let window = UIWindow(windowScene: windowScene)
             window.overrideUserInterfaceStyle = UIUserInterfaceStyle.light
             
-            let rootVC = MusicGridViewController()
+            let rootVC = AddSongViewController()
             let navigationController = UINavigationController(rootViewController: rootVC)
             navigationController.navigationBar.isHidden = true
     
