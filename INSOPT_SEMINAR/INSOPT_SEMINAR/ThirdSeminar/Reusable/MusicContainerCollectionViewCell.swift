@@ -1,8 +1,8 @@
 //
-//  MusicGridViewController.swift
+//  MusicContainerCollectionViewCell.swift
 //  INSOPT_SEMINAR
 //
-//  Created by hansol on 2022/10/15.
+//  Created by hansol on 2022/11/16.
 //
 
 import UIKit
@@ -11,11 +11,15 @@ import SnapKit
 import SwiftyColor
 import Then
 
-// MARK: - MusicGridViewController
+// MARK: - MusicContainerCollectionViewCell
 
-final class MusicGridViewController: UIViewController {
-
-    // MARK: - UI Components
+final class MusicContainerCollectionViewCell: UICollectionViewCell {
+    
+    // MARK: - Idenifier
+    
+    static let identifier = "MusicContainerCollectionViewCell"
+    
+    // MARK: - Reusable Components
     
     private lazy var musicCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -31,48 +35,47 @@ final class MusicGridViewController: UIViewController {
         return collectionView
     }()
     
-    // MARK: - Variables
-    
-    var musicList: [MusicModel] = [
-        MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"),
-        MusicModel(albumImage: "albumImage1", title: "Monologue", singer: "테이")
-    ]
-    
     // MARK: - Constants
     
-    final let kMusicInset: UIEdgeInsets = UIEdgeInsets(top: 49, left: 20, bottom: 10, right: 20)
-    final let kMusicLineSpacing: CGFloat = 10
-    final let kMusicInterItemSpacing: CGFloat = 21
-    final let kCellHeight: CGFloat = 198
+    final let kMusicInset: UIEdgeInsets = UIEdgeInsets(top: 14.adjusted, left: 5.adjusted, bottom: 15.adjusted, right: 5.adjusted)
+    final let kMusicLineSpacing: CGFloat = 10.adjusted
+    final let kMusicInterItemSpacing: CGFloat = 21.adjusted
+    final let kCellHeight: CGFloat = 198.adjusted
     
-    // MARK: - Life Cycles
+    // MARK: - Variables
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var musicList: [MusicModel] = []
+    
+    // MARK: - Init
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         register()
         layout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        contentView.layer.cornerRadius = 12.adjusted
     }
 }
 
 // MARK: - Extensions
 
-extension MusicGridViewController {
+extension MusicContainerCollectionViewCell {
     
     // MARK: - Layout Helpers
     
     private func layout() {
-        view.backgroundColor = .white
-        view.addSubview(musicCollectionView)
+        backgroundColor = .clear
+        contentView.backgroundColor = 0xF1FBF4.color
+        contentView.addSubview(musicCollectionView)
         musicCollectionView.snp.makeConstraints {
-            $0.top.leading.trailing.equalTo(self.view.safeAreaLayoutGuide)
-            $0.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
             $0.height.equalTo(calculateCellHeight())
         }
     }
@@ -91,15 +94,20 @@ extension MusicGridViewController {
         let heightCount = count / 2 + count.truncatingRemainder(dividingBy: 2)
         return heightCount * kCellHeight + (heightCount - 1) * kMusicLineSpacing + kMusicInset.top + kMusicInset.bottom
     }
+    
+    func dataBind(model: [MusicModel]) {
+        musicList = model
+        musicCollectionView.reloadData()
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 
-extension MusicGridViewController: UICollectionViewDelegateFlowLayout {
+extension MusicContainerCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = UIScreen.main.bounds.width
+        let width = UIScreen.main.bounds.width - 30.adjusted
         let doubleCellWidth = width - kMusicInset.left - kMusicInset.right - kMusicInterItemSpacing
-        return CGSize(width: doubleCellWidth / 2, height: 198)
+        return CGSize(width: doubleCellWidth / 2 - 1.adjusted , height: 198.adjusted)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -115,9 +123,9 @@ extension MusicGridViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: -UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 
-extension MusicGridViewController: UICollectionViewDataSource {
+extension MusicContainerCollectionViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return musicList.count
     }

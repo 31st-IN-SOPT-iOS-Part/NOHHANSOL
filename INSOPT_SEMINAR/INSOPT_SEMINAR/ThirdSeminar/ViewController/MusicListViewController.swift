@@ -13,7 +13,7 @@ import SwiftyColor
 // MARK: - MusicListViewController
 
 final class MusicListViewController: UIViewController {
-
+    
     // MARK: - UI Components
     
     private lazy var musicTableView: UITableView = {
@@ -61,15 +61,21 @@ extension MusicListViewController {
         musicTableView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.bottom.equalToSuperview()
-            $0.height.equalTo(70 * musicList.count)
+            $0.height.equalTo(70 * musicList.count + 70)
         }
     }
     
     // MARK: - General Helpers
     
     private func register() {
-        musicTableView.register(MusicTableViewCell.self,
-                                forCellReuseIdentifier: MusicTableViewCell.identifier
+        musicTableView.register(
+            MusicTableViewCell.self,
+            forCellReuseIdentifier: MusicTableViewCell.identifier
+        )
+        
+        musicTableView.register(
+            LargeMusicTableViewCell.self,
+            forCellReuseIdentifier: LargeMusicTableViewCell.identifier
         )
     }
 }
@@ -78,6 +84,12 @@ extension MusicListViewController {
 
 extension MusicListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        /// 첫 번째 셀만 높이 140
+        if indexPath.item == 0 {
+            return 140
+        }
+        
+        /// 나머지 셀들은 높이 70
         return 70
     }
 }
@@ -90,12 +102,21 @@ extension MusicListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /// 첫 번쨰 셀만!
+        if indexPath.item == 0 {
+            guard let musicCell = tableView.dequeueReusableCell(
+                withIdentifier: LargeMusicTableViewCell.identifier, for: indexPath)
+                    as? LargeMusicTableViewCell else { return UITableViewCell() }
+            musicCell.dataBind(model: musicList[indexPath.row])
+            return musicCell
+        }
+        
+        /// 나머지 셀들!
         guard let musicCell = tableView.dequeueReusableCell(
             withIdentifier: MusicTableViewCell.identifier, for: indexPath)
                 as? MusicTableViewCell else { return UITableViewCell() }
-        
         musicCell.dataBind(model: musicList[indexPath.row])
         return musicCell
+        
     }
-
 }

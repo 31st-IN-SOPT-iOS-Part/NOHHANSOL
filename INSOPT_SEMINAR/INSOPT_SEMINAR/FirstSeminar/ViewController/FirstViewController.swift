@@ -85,11 +85,12 @@ class FirstViewController: UIViewController {
 // MARK: - UITextFieldDelegate
 
 extension FirstViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        pushToSecondVC()
-    }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        pushToSecondVC()
     }
 }
