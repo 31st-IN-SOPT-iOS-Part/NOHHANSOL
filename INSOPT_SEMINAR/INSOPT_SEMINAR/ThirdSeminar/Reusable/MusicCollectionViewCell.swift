@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SnapKit
 import SwiftyColor
 import Then
@@ -87,6 +88,7 @@ extension MusicCollectionViewCell {
     func dataBind(model: MusicModel) {
         titleLabel.text = model.title
         singerLabel.text = model.singer
-        albumImageView.image = UIImage(named: model.albumImage)
+        guard let url = URL(string: model.albumImage) else { return }
+        albumImageView.kf.setImage(with: url)
     }
 }

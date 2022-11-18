@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Moya
 import SnapKit
 import SwiftyColor
 import Then
@@ -14,7 +15,7 @@ import Then
 // MARK: - MusicGridViewController
 
 final class MusicGridViewController: UIViewController {
-
+    
     // MARK: - UI Components
     
     private lazy var musicCollectionView: UICollectionView = {
@@ -33,17 +34,11 @@ final class MusicGridViewController: UIViewController {
     
     // MARK: - Variables
     
-    var musicList: [MusicModel] = [
-        MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"),
-        MusicModel(albumImage: "albumImage1", title: "Monologue", singer: "테이")
-    ]
+    let userProvider = MoyaProvider<ExampleRouter>(
+        plugins: [NetworkLoggerPlugin(verbose: true)]
+    )
+
+    var musicList: [MusicModel] = []
     
     // MARK: - Constants
     
@@ -58,6 +53,11 @@ final class MusicGridViewController: UIViewController {
         super.viewDidLoad()
         register()
         layout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchMusicList()
     }
 }
 
@@ -91,6 +91,34 @@ extension MusicGridViewController {
         let heightCount = count / 2 + count.truncatingRemainder(dividingBy: 2)
         return heightCount * kCellHeight + (heightCount - 1) * kMusicLineSpacing + kMusicInset.top + kMusicInset.bottom
     }
+    
+    // MARK: - Server Helpers
+    
+    private func fetchMusicList() {
+        userProvider.request(.fetchSongs) { response in
+            switch response {
+            case .success(let result):
+                let status = result.statusCode
+                if status >= 200 && status < 300 {
+                    do {
+                        let response = try result.map(FetchMusicResponseDto.self)
+                        for dto in response.data {
+                            self.musicList.append(dto.convertToMusic())
+                        }
+                        self.musicCollectionView.reloadData()
+                    }
+                    catch(let error) {
+                        print(error.localizedDescription)
+                    }
+                }
+                if status >= 400 {
+                    print("error")
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -121,7 +149,7 @@ extension MusicGridViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return musicList.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let musicCell = collectionView.dequeueReusableCell(
             withReuseIdentifier: MusicCollectionViewCell.identifier, for: indexPath)

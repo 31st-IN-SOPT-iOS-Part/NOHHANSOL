@@ -29,16 +29,34 @@ final class MusicListViewController: UIViewController {
     
     // MARK: - Variables
     
-    var musicList: [MusicModel] = [
-        MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"),
-        MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"),
-        MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"),
-        MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"),
-        MusicModel(albumImage: "albumImage1", title: "Monologue", singer: "테이")
+    var musicList: [(MusicModel, Bool)] = [
+        (MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"), false),
+        (MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"), false),
+        (MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"), false),
+        (MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"), false),
+        (MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"), false),
+        (MusicModel(albumImage: "albumImage9", title: "Monologue", singer: "테이"), false),
+        (MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"), false),
+        (MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"), false),
+        (MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"), false),
+        (MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"), false),
+        (MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"), false),
+        (MusicModel(albumImage: "albumImage9", title: "Monologue", singer: "테이"), false),
+        (MusicModel(albumImage: "albumImage1", title: "Eleven", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage2", title: "After LIKE", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage3", title: "Attention", singer: "New Jeans"), false),
+        (MusicModel(albumImage: "albumImage4", title: "Shut Down", singer: "BLACKPINK"), false),
+        (MusicModel(albumImage: "albumImage5", title: "Hype Boy", singer: "New Jeans"), false),
+        (MusicModel(albumImage: "albumImage6", title: "LOVE DIVE", singer: "IVE(아이브)"), false),
+        (MusicModel(albumImage: "albumImage7", title: "Pink Venom", singer: "BLACKPINK"), false),
+        (MusicModel(albumImage: "albumImage8", title: "Rush Hour (feat. j-hope of ...", singer: "Crush"), false),
+        (MusicModel(albumImage: "albumImage9", title: "Monologue", singer: "테이"), false)
     ]
     
     // MARK: - Life Cycles
@@ -73,10 +91,10 @@ extension MusicListViewController {
             forCellReuseIdentifier: MusicTableViewCell.identifier
         )
         
-        musicTableView.register(
-            LargeMusicTableViewCell.self,
-            forCellReuseIdentifier: LargeMusicTableViewCell.identifier
-        )
+//        musicTableView.register(
+//            LargeMusicTableViewCell.self,
+//            forCellReuseIdentifier: LargeMusicTableViewCell.identifier
+//        )
     }
 }
 
@@ -104,19 +122,25 @@ extension MusicListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /// 첫 번쨰 셀만!
         if indexPath.item == 0 {
-            guard let musicCell = tableView.dequeueReusableCell(
-                withIdentifier: LargeMusicTableViewCell.identifier, for: indexPath)
-                    as? LargeMusicTableViewCell else { return UITableViewCell() }
-            musicCell.dataBind(model: musicList[indexPath.row])
-            return musicCell
+//            guard let musicCell = tableView.dequeueReusableCell(
+//                withIdentifier: LargeMusicTableViewCell.identifier, for: indexPath)
+//                    as? LargeMusicTableViewCell else { return UITableViewCell() }
+//            musicCell.dataBind(model: musicList[indexPath.row])
+//            return musicCell
         }
         
         /// 나머지 셀들!
         guard let musicCell = tableView.dequeueReusableCell(
             withIdentifier: MusicTableViewCell.identifier, for: indexPath)
                 as? MusicTableViewCell else { return UITableViewCell() }
-        musicCell.dataBind(model: musicList[indexPath.row])
+        
+        musicCell.dataBind(model: musicList[indexPath.row].0, isSelected: musicList[indexPath.row].1)
         return musicCell
         
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        musicList[indexPath.row].1 = !musicList[indexPath.row].1
+        tableView.reloadData()
     }
 }

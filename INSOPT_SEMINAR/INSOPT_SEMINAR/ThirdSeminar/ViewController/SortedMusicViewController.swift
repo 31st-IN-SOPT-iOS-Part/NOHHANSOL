@@ -40,7 +40,6 @@ final class SortedMusicViewController: UIViewController {
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout).then {
             $0.isScrollEnabled = true
-            $0.isPagingEnabled = false
             $0.translatesAutoresizingMaskIntoConstraints = false
             $0.backgroundColor = .clear
             $0.decelerationRate = .fast
@@ -69,8 +68,11 @@ final class SortedMusicViewController: UIViewController {
     
     private final let kCategoryItemSpacing = 5.adjusted
     private final let kCategoryInset = UIEdgeInsets(top: 5.adjusted, left: 0, bottom: 5.adjusted, right: 0)
-    private final let kGridItemSpacing = 15.adjusted
-    private final let kGridInset = UIEdgeInsets(top: 0, left: 15.adjusted, bottom: 0, right: 15.adjusted)
+    
+    private final let kContainerCellWidth = UIScreen.main.bounds.width - 30.adjusted
+    private final let kContainerLineSpacing = 15.adjusted
+    private final let kContainerInset = UIEdgeInsets(top: 0, left: 15.adjusted, bottom: 0, right: 15.adjusted)
+    
     private final let kMusicCellHeight = 198.adjusted
     private final let kMusicLineSpacing = 10.adjusted
     private final let kMusicItemSpacing = 21.adjusted
@@ -129,7 +131,7 @@ extension SortedMusicViewController {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             $0.height.equalTo(calculateContainerViewHeight())
-            $0.bottom.equalToSuperview().offset(-25.adjusted)
+            $0.bottom.lessThanOrEqualToSuperview().offset(-25.adjusted)
         }
     }
     
@@ -176,7 +178,7 @@ extension SortedMusicViewController {
     
     private func calculateContainerViewHeight() -> CGFloat {
         let count: CGFloat = CGFloat(musicList[selectedIndex].musicList.count)
-        let heightCount = count / 2 + count.truncatingRemainder(dividingBy: 2)
+        let heightCount = ceil(count/2)
         return heightCount * kMusicCellHeight + (heightCount - 1) * kMusicLineSpacing + kMusicInset.top + kMusicInset.bottom
     }
 }
@@ -189,8 +191,7 @@ extension SortedMusicViewController: UICollectionViewDelegateFlowLayout {
         case singerCategoryCollectionView:
             return CGSize(width: calculateCategoryCellWidth(index: indexPath.item), height: 18.adjusted)
         case musicContainerCollectionView:
-            let width = UIScreen.main.bounds.width - 30.adjusted
-            return CGSize(width: width, height: calculateContainerViewHeight())
+            return CGSize(width: kContainerCellWidth, height: calculateContainerViewHeight())
         default:
             return CGSize.zero
         }
@@ -201,7 +202,7 @@ extension SortedMusicViewController: UICollectionViewDelegateFlowLayout {
         case singerCategoryCollectionView:
             return kCategoryItemSpacing
         case musicContainerCollectionView:
-            return kGridItemSpacing
+            return kContainerLineSpacing
         default:
             return 0
         }
@@ -209,7 +210,7 @@ extension SortedMusicViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == musicContainerCollectionView {
-            return kGridItemSpacing
+            return kContainerLineSpacing
         }
         return 0
     }
@@ -219,7 +220,7 @@ extension SortedMusicViewController: UICollectionViewDelegateFlowLayout {
         case singerCategoryCollectionView:
             return kCategoryInset
         case musicContainerCollectionView:
-            return kGridInset
+            return kContainerInset
         default:
             return .zero
         }
@@ -237,38 +238,25 @@ extension SortedMusicViewController: UICollectionViewDelegateFlowLayout {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView == musicContainerCollectionView {
-            let cellWidthIncludingSpacing = UIScreen.main.bounds.width - 30.adjusted + kGridItemSpacing
+            let cellWidthIncludingSpacing = kContainerCellWidth + kContainerLineSpacing
 
             var offset = targetContentOffset.pointee
-            let index = (offset.x + kGridInset.left) / cellWidthIncludingSpacing
-            var roundedIndex = round(index)
-
-            if scrollView.contentOffset.x > targetContentOffset.pointee.x {
-                roundedIndex = floor(index)
-            } else if scrollView.contentOffset.x < targetContentOffset.pointee.x {
-                roundedIndex = ceil(index)
-            } else {
-                roundedIndex = round(index)
-            }
-
+            let index = (offset.x + kContainerInset.left) / cellWidthIncludingSpacing
+            let roundedIndex = round(index)
             var currentIndex = CGFloat(selectedIndex)
-
             if currentIndex > roundedIndex {
                 currentIndex -= 1
-                roundedIndex = currentIndex
             } else if currentIndex < roundedIndex {
                 currentIndex += 1
-                roundedIndex = currentIndex
             }
 
-
             offset = CGPoint(
-                x: roundedIndex * cellWidthIncludingSpacing,
+                x: currentIndex * cellWidthIncludingSpacing,
                 y: -scrollView.contentInset.top
             )
 
             targetContentOffset.pointee = offset
-            selectedIndex = Int(roundedIndex)
+            selectedIndex = Int(currentIndex)
             relayoutGridHeight()
             musicContainerCollectionView.reloadData()
             singerCategoryCollectionView.reloadData()
@@ -291,12 +279,14 @@ extension SortedMusicViewController: UICollectionViewDataSource {
                     as? SingerCategoryCollectionViewCell else { return UICollectionViewCell() }
             categoryCell.dataBind(singer: musicList[indexPath.item].singer, isSelected: selectedIndex == indexPath.item)
             return categoryCell
+            
         case musicContainerCollectionView:
             guard let containerCell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: MusicContainerCollectionViewCell.identifier, for: indexPath)
                     as? MusicContainerCollectionViewCell else { return UICollectionViewCell() }
             containerCell.dataBind(model: musicList[indexPath.item].musicList)
             return containerCell
+            
         default:
             return UICollectionViewCell()
         }

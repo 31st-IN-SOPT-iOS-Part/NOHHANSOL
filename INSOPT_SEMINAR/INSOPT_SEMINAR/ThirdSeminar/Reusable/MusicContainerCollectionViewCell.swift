@@ -28,7 +28,7 @@ final class MusicContainerCollectionViewCell: UICollectionViewCell {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.isScrollEnabled = true
+        collectionView.isScrollEnabled = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -91,7 +91,7 @@ extension MusicContainerCollectionViewCell {
     
     private func calculateCellHeight() -> CGFloat {
         let count = CGFloat(musicList.count)
-        let heightCount = count / 2 + count.truncatingRemainder(dividingBy: 2)
+        let heightCount = ceil(count / 2)
         return heightCount * kCellHeight + (heightCount - 1) * kMusicLineSpacing + kMusicInset.top + kMusicInset.bottom
     }
     

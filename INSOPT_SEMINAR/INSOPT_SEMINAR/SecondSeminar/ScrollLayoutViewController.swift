@@ -22,9 +22,9 @@ final class ScrollLayoutViewController: UIViewController {
     private let firstView = UIView()
     private let secondView = UIView()
     private let thirdView = UIView()
-    private let firstButton = ProfileMenuButton(frame: .zero, image: "profileTalkImage", text: "나와의 채팅")
-    private let secondButton = ProfileMenuButton(frame: .zero, image: "profileTalkImage", text: "프로필 편집")
-    private let thirdButton = ProfileMenuButton(frame: .zero, image: "profileTalkImage", text: "카카오스토리")
+//    private let firstButton = ProfileMenuButton(frame: .zero, image: "profileTalkImage", text: "나와의 채팅")
+//    private let secondButton = ProfileMenuButton(frame: .zero, image: "profileTalkImage", text: "프로필 편집")
+//    private let thirdButton = ProfileMenuButton(frame: .zero, image: "profileTalkImage", text: "카카오스토리")
 
     
     // MARK: - LifeCycles
