@@ -30,6 +30,9 @@
 		CC53689A2915C6150010BD2A /* ExampleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5368992915C6150010BD2A /* ExampleRouter.swift */; };
 		CC53689C2915DF200010BD2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC53689B2915DF200010BD2A /* LoginViewController.swift */; };
 		CC5368A02915FC240010BD2A /* UserResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC53689F2915FC240010BD2A /* UserResponseDto.swift */; };
+		CC7215AD292FDC02009B7C49 /* AnswerLoadImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7215AC292FDC02009B7C49 /* AnswerLoadImagesViewController.swift */; };
+		CC7215AF29310402009B7C49 /* GCDTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7215AE29310402009B7C49 /* GCDTestViewController.swift */; };
+		CC7215B129314580009B7C49 /* LoadImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7215B029314580009B7C49 /* LoadImagesViewController.swift */; };
 		CC9981662927620B005E0FBA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = CC9981652927620B005E0FBA /* Kingfisher */; };
 		CCB3D2252915B8160041E7A1 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCB3D2242915B8160041E7A1 /* SignupViewController.swift */; };
 		CCB3D2282915B8660041E7A1 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = CCB3D2272915B8660041E7A1 /* Moya */; };
@@ -91,6 +94,9 @@
 		CC5368992915C6150010BD2A /* ExampleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleRouter.swift; sourceTree = "<group>"; };
 		CC53689B2915DF200010BD2A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CC53689F2915FC240010BD2A /* UserResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponseDto.swift; sourceTree = "<group>"; };
+		CC7215AC292FDC02009B7C49 /* AnswerLoadImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerLoadImagesViewController.swift; sourceTree = "<group>"; };
+		CC7215AE29310402009B7C49 /* GCDTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDTestViewController.swift; sourceTree = "<group>"; };
+		CC7215B029314580009B7C49 /* LoadImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImagesViewController.swift; sourceTree = "<group>"; };
 		CCB3D2242915B8160041E7A1 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		CCB3D2292915B8A10041E7A1 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		CCDF93CC28F9B126004F960F /* INSOPT_SEMINAR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INSOPT_SEMINAR.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +277,24 @@
 			path = ResponseDto;
 			sourceTree = "<group>";
 		};
+		CC7215AA292FDBDC009B7C49 /* SeventhSeminar */ = {
+			isa = PBXGroup;
+			children = (
+				CC7215AB292FDBEF009B7C49 /* ViewController */,
+			);
+			path = SeventhSeminar;
+			sourceTree = "<group>";
+		};
+		CC7215AB292FDBEF009B7C49 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CC7215AC292FDC02009B7C49 /* AnswerLoadImagesViewController.swift */,
+				CC7215B029314580009B7C49 /* LoadImagesViewController.swift */,
+				CC7215AE29310402009B7C49 /* GCDTestViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		CCB3D2202915B7B90041E7A1 /* FourthSeminar */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,8 +357,9 @@
 				CCF5D18C28F9B4BF002D89B6 /* ThirdSeminar */,
 				CCB3D2202915B7B90041E7A1 /* FourthSeminar */,
 				CCE3509B2926B95B0034E443 /* SixthSeminar */,
-				CCDF93D828F9B128004F960F /* Assets.xcassets */,
+				CC7215AA292FDBDC009B7C49 /* SeventhSeminar */,
 				CCDF93DA28F9B128004F960F /* LaunchScreen.storyboard */,
+				CCDF93D828F9B128004F960F /* Assets.xcassets */,
 				CCDF93DD28F9B128004F960F /* Info.plist */,
 			);
 			path = INSOPT_SEMINAR;
@@ -544,6 +569,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7215AD292FDC02009B7C49 /* AnswerLoadImagesViewController.swift in Sources */,
 				CC5368A02915FC240010BD2A /* UserResponseDto.swift in Sources */,
 				CCF5D18428F9B49A002D89B6 /* SecondViewController.swift in Sources */,
 				CCE350962926B9310034E443 /* SingerCategoryCollectionViewCell.swift in Sources */,
@@ -566,6 +592,7 @@
 				CC1AFDE32904225200272F92 /* Double+.swift in Sources */,
 				CC1AFDED2904382D00272F92 /* FriendTableViewCell.swift in Sources */,
 				CCF5D18B28F9B4B0002D89B6 /* SceneDelegate.swift in Sources */,
+				CC7215AF29310402009B7C49 /* GCDTestViewController.swift in Sources */,
 				CC1AFDD42904216D00272F92 /* FriendListViewController.swift in Sources */,
 				CCE3509F2926B9790034E443 /* AddSongViewController.swift in Sources */,
 				CC53688E2915BFB60010BD2A /* UserRequestDtos.swift in Sources */,
@@ -576,6 +603,7 @@
 				CCE350982926B9430034E443 /* MusicContainerCollectionViewCell.swift in Sources */,
 				CC1AFDD82904217800272F92 /* SharpViewController.swift in Sources */,
 				CCB3D22A2915B8A10041E7A1 /* InputView.swift in Sources */,
+				CC7215B129314580009B7C49 /* LoadImagesViewController.swift in Sources */,
 				CC5368942915C5F80010BD2A /* ExampleResponseDto.swift in Sources */,
 				CC53689A2915C6150010BD2A /* ExampleRouter.swift in Sources */,
 				CC1AFDDC2904218400272F92 /* MoreViewController.swift in Sources */,
